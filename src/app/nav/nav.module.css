@@ -1,0 +1,24 @@
+/* Nav.module.css */
+
+.popup-menu {
+    /* Add other styles as needed */
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(-100%);
+}
+
+.popup-menu.visible {
+    transform: translateX(0);
+}
+
+.slideIn {
+    animation: slideInAnimation 0.5s ease-in-out;
+}
+
+@keyframes slideInAnimation {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
