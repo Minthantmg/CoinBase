@@ -2,6 +2,7 @@ import React from 'react';
 import Image from "next/image";
 import github from '../../../public/github.svg'
 import linkedin from '../../../public/linkedin.svg'
+import hamburger from '../../../public/hamburger.svg'
 
 const Nav = () => {
     return (
@@ -12,16 +13,16 @@ const Nav = () => {
                </div>
             </div>
             <div className="flex justify-center items-center">
-                <div className="mr-6 font-bold">
+                <div className="mr-6 font-bold hidden sm:block">
                     Home
                 </div>
-                <div className="mr-6 font-bold">
+                <div className="mr-6 font-bold hidden sm:block">
                     Market
                 </div>
-                <div className="mr-6 font-bold">
+                <div className="mr-6 font-bold hidden sm:block">
                     Choose Us
                 </div>
-                <div className="font-bold">
+                <div className="font-bold hidden sm:block">
                     Join
                 </div>
             </div>
@@ -31,6 +32,9 @@ const Nav = () => {
                 </div>
                 <div>
                     <Image src={github} alt="" className="w-7 h-7 ml-4"/>
+                </div>
+                <div>
+                    <Image src={hamburger} alt="" className="w-7 h-7 sm:hidden block ml-4"/>
                 </div>
             </div>
         </div>
