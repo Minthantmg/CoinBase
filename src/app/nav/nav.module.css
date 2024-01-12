@@ -1,7 +1,4 @@
-/* Nav.module.css */
-
 .popup-menu {
-    /* Add other styles as needed */
     transition: transform 0.5s ease-in-out;
     transform: translateX(-100%);
 }

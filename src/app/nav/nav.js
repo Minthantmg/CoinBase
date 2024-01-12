@@ -7,6 +7,7 @@ import hamburger from '../../../public/hamburger.svg';
 import close from '../../../public/close.svg';
 import { useRouter } from 'next/navigation';
 import styles from './nav.module.css';
+import Hero from "@/app/heroSection/hero";
 
 const Nav = () => {
     const router = useRouter();
@@ -54,33 +55,36 @@ const Nav = () => {
                     </div>
                 </div>
             ) : (
-                <div className="flex justify-around items-center mt-4 pb-4">
-                    <div>
-                        <div className="font-mono text-3xl font-bold">COINBASE</div>
-                    </div>
-                    <div className="flex justify-center items-center">
-                        <div className="mr-6 font-bold hidden sm:block">Home</div>
-                        <div className="mr-6 font-bold hidden sm:block">Market</div>
-                        <div className="mr-6 font-bold hidden sm:block">Choose Us</div>
-                        <div className="font-bold hidden sm:block">Join</div>
-                    </div>
-                    <div className="flex items-center justify-center">
+                <>
+                    <div className="flex justify-around items-center mt-4 pb-4">
                         <div>
-                            <Image src={linkedin} alt="" className="w-7 h-7 cursor-pointer" onClick={gotoLinkedin} />
+                            <div className="font-mono text-3xl font-bold">COINBASE</div>
                         </div>
-                        <div>
-                            <Image src={github} alt="" className="w-7 h-7 ml-4 cursor-pointer" onClick={gotoGithub} />
+                        <div className="flex justify-center items-center">
+                            <div className="mr-6 font-bold hidden sm:block">Home</div>
+                            <div className="mr-6 font-bold hidden sm:block">Market</div>
+                            <div className="mr-6 font-bold hidden sm:block">Choose Us</div>
+                            <div className="font-bold hidden sm:block">Join</div>
                         </div>
-                        <div>
-                            <Image
-                                src={hamburger}
-                                alt=""
-                                className="w-7 h-7 sm:hidden block ml-4"
-                                onClick={handleMenuClick}
-                            />
+                        <div className="flex items-center justify-center">
+                            <div>
+                                <Image src={linkedin} alt="" className="w-7 h-7 cursor-pointer" onClick={gotoLinkedin} />
+                            </div>
+                            <div>
+                                <Image src={github} alt="" className="w-7 h-7 ml-4 cursor-pointer" onClick={gotoGithub} />
+                            </div>
+                            <div>
+                                <Image
+                                    src={hamburger}
+                                    alt=""
+                                    className="w-7 h-7 sm:hidden block ml-4"
+                                    onClick={handleMenuClick}
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <Hero />
+                </>
             )}
         </>
     );
