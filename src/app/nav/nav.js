@@ -8,6 +8,7 @@ import close from '../../../public/close.svg';
 import { useRouter } from 'next/navigation';
 import styles from './nav.module.css';
 import Hero from "@/app/heroSection/hero";
+import Market from "@/app/market/market";
 
 const Nav = () => {
     const router = useRouter();
@@ -56,17 +57,18 @@ const Nav = () => {
                 </div>
             ) : (
                 <>
-                    <div className="flex justify-around items-center mt-4 pb-4">
+                    <div className="flex justify-between items-center mt-4 pb-4">
                         <div>
-                            <div className="font-mono text-3xl font-bold">COINBASE</div>
+                            <div className="font-mono text-3xl font-bold ml-28">COINBASE</div>
                         </div>
                         <div className="flex justify-center items-center">
-                            <div className="mr-6 font-bold hidden sm:block">Home</div>
-                            <div className="mr-6 font-bold hidden sm:block">Market</div>
-                            <div className="mr-6 font-bold hidden sm:block">Choose Us</div>
-                            <div className="font-bold hidden sm:block">Join</div>
+                            <div className="mr-6 font-bold text-xl hidden sm:block">
+                                <a href="#hero">Home</a></div>
+                            <div className="mr-6 font-bold text-xl hidden sm:block">Market</div>
+                            <div className="mr-6 font-bold text-xl hidden sm:block">Choose Us</div>
+                            <div className="font-bold hidden text-xl sm:block">Join</div>
                         </div>
-                        <div className="flex items-center justify-center">
+                        <div className="flex items-center justify-center mr-28">
                             <div>
                                 <Image src={linkedin} alt="" className="w-7 h-7 cursor-pointer" onClick={gotoLinkedin} />
                             </div>
@@ -83,7 +85,10 @@ const Nav = () => {
                             </div>
                         </div>
                     </div>
-                    <Hero />
+                    <section id="hero">
+                        <Hero />
+                    </section>
+                    <Market />
                 </>
             )}
         </>
