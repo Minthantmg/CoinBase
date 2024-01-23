@@ -1,14 +1,17 @@
 'use client'
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
 import github from '../../../public/github.svg';
 import linkedin from '../../../public/linkedin.svg';
 import hamburger from '../../../public/hamburger.svg';
 import close from '../../../public/close.svg';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import styles from './nav.module.css';
 import Hero from "@/app/heroSection/hero";
 import Market from "@/app/market/market";
+import Choose from "@/app/choose/choose";
+import Join from "@/app/join/join";
+import Footer from "@/app/footer/footer";
 
 const Nav = () => {
     const router = useRouter();
@@ -57,38 +60,49 @@ const Nav = () => {
                 </div>
             ) : (
                 <>
-                    <div className="flex justify-between items-center mt-4 pb-4">
+                    <div className="flex justify-around sm:justify-between items-center mt-8 pb-8">
                         <div>
-                            <div className="font-mono text-3xl font-bold ml-28">COINBASE</div>
+                            <div className="font-mono text-3xl font-bold sm:ml-28">COINBASE</div>
                         </div>
                         <div className="flex justify-center items-center">
-                            <div className="mr-6 font-bold text-xl hidden sm:block">
+                            <div className="mr-10 font-bold text-xl hidden lg:block">
                                 <a href="#hero">Home</a></div>
-                            <div className="mr-6 font-bold text-xl hidden sm:block">Market</div>
-                            <div className="mr-6 font-bold text-xl hidden sm:block">Choose Us</div>
-                            <div className="font-bold hidden text-xl sm:block">Join</div>
+                            <div className="mr-10 font-bold text-xl hidden lg:block">
+                                Market
+                            </div>
+                            <div className="mr-10 font-bold text-xl hidden lg:block"><a href="#choose">Choose Us</a>
+                            </div>
+                            <div className="font-bold hidden text-xl lg:block"><a href="#join">Join</a></div>
                         </div>
-                        <div className="flex items-center justify-center mr-28">
+                        <div className="flex items-center justify-center sm:mr-28">
                             <div>
-                                <Image src={linkedin} alt="" className="w-7 h-7 cursor-pointer" onClick={gotoLinkedin} />
+                                <Image src={linkedin} alt="" className="w-7 h-7 cursor-pointer" onClick={gotoLinkedin}/>
                             </div>
                             <div>
-                                <Image src={github} alt="" className="w-7 h-7 ml-4 cursor-pointer" onClick={gotoGithub} />
+                                <Image src={github} alt="" className="w-7 h-7 ml-4 cursor-pointer"
+                                       onClick={gotoGithub}/>
                             </div>
                             <div>
                                 <Image
                                     src={hamburger}
                                     alt=""
-                                    className="w-7 h-7 sm:hidden block ml-4"
+                                    className="w-7 h-7 lg:hidden block ml-4"
                                     onClick={handleMenuClick}
                                 />
                             </div>
                         </div>
                     </div>
                     <section id="hero">
-                        <Hero />
+                        <Hero/>
                     </section>
-                    <Market />
+                    {/*<Market />*/}
+                    <section id="choose">
+                        <Choose/>
+                    </section>
+                    <section id="join">
+                        <Join />
+                    </section>
+                    <Footer />
                 </>
             )}
         </>
