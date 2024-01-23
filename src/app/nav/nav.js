@@ -43,16 +43,16 @@ const Nav = () => {
                             <Image src={close} alt="" onClick={closeMobileMenu}/>
                         </div>
                         <div className="flex flex-col items-center justify-center mt-60">
-                            <a href="" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
+                            <a href="#hero" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
                                 Home
                             </a>
                             <a href="" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
                                 Market
                             </a>
-                            <a href="" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
+                            <a href="#choose" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
                                 Choose Us
                             </a>
-                            <a href="" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
+                            <a href="#join" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
                                 Join
                             </a>
                         </div>

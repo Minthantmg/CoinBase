@@ -11,13 +11,13 @@ const Footer = () => {
     return (
         <div>
             <div className="bg-black flex justify-around">
-                <div>
+                <div className="hidden sm:block">
                     <Image src={crypto} alt="" className="w-80 h-80 mr-20"/>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                    <div className="flex">
+                    <div className="flex mt-10 sm:mt-0">
                         <div>
-                            <Image src={twitter} alt="" className="w-10 h-10 mr-6 cursor-pointer"/>
+                            <Image src={twitter} alt="" className="w-10 h-10 mr-6 ml-6 sm:ml-0 cursor-pointer"/>
                         </div>
                         <div>
                             <Image src={discord} alt="" className="w-10 h-10 mr-6 cursor-pointer"/>
@@ -29,16 +29,16 @@ const Footer = () => {
                             <Image src={youtube} alt="" className="w-10 h-10 mr-6 cursor-pointer"/>
                         </div>
                     </div>
-                    <div className="flex text-white text-lg mt-6">
-                        <div className="cursor-pointer">
+                    <div className="flex text-white text-sm sm:text-lg  mt-6 ml-8 sm:ml-0 mb-16 sm:mb-0">
+                        <div className="cursor-pointer font-mono leading-tight">
                             Privacy
                         </div>
-                        <div className="ml-6 mr-6 cursor-pointer">
+                        <div className="ml-6 mr-6 cursor-pointer font-mono leading-tight">
                             Terms of Use
                         </div>
                     </div>
                 </div>
-                <div className="flex">
+                <div className="hidden sm:block">
                     <Image src={crypto_two} alt="" className="w-80 h-80 ml-20"/>
                 </div>
             </div>
