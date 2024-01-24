@@ -95,7 +95,7 @@ const Nav = () => {
                     <section id="hero">
                         <Hero/>
                     </section>
-                    {/*<Market />*/}
+                    <Market />
                     <section id="choose">
                         <Choose/>
                     </section>

@@ -13,7 +13,7 @@ const Hero = () => {
                         <div className={`mt-20 hidden xl:block ${styles.floatingImage}`}>
                             <Image src={bitcoin} alt="" className="w-36 h-36"/>
                         </div>
-                        <div className="sm:text-[110px] text-6xl mt-12 space-x-6 font-mono font-bold leading-tight tracking-tight text-center">
+                        <div className="sm:text-[120px] text-6xl mt-12 space-x-6 font-mono font-bold leading-tight tracking-tight text-center">
                             TRACK AND TRADE
                         </div>
                         <div className={`mt-20 hidden xl:block ${styles.floatingImage}`}>
@@ -22,7 +22,7 @@ const Hero = () => {
                     </div>
                     <div>
                         <div
-                            className="sm:text-[110px] sm:ml-8 sm:mr-8 text-6xl space-x-6 font-mono font-bold leading-tight tracking-tight text-center bg-gradient-to-r from-blue-700 to-purple-900 bg-clip-text text-transparent">CRYPTO
+                            className="sm:text-[120px] sm:ml-8 sm:mr-8 text-6xl space-x-6 font-mono font-bold leading-tight tracking-tight text-center bg-gradient-to-r from-blue-700 to-purple-900 bg-clip-text text-transparent">CRYPTO
                             CURRENCIES
                         </div>
                     </div>
