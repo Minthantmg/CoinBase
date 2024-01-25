@@ -46,7 +46,7 @@ const Nav = () => {
                             <a href="#hero" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
                                 Home
                             </a>
-                            <a href="" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
+                            <a href="#market" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
                                 Market
                             </a>
                             <a href="#choose" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
@@ -59,16 +59,16 @@ const Nav = () => {
                     </div>
                 </div>
             ) : (
-                <>
-                    <div className="flex justify-around sm:justify-between items-center mt-8 pb-8">
+                <div className="bg-indigo-900 text-white">
+                    <div className="flex justify-around sm:justify-between items-center pt-8 pb-8">
                         <div>
                             <div className="font-mono text-3xl font-bold sm:ml-28">COINBASE</div>
                         </div>
                         <div className="flex justify-center items-center">
                             <div className="mr-10 font-bold text-xl hidden lg:block">
                                 <a href="#hero">Home</a></div>
-                            <div className="mr-10 font-bold text-xl hidden lg:block">
-                                Market
+                            <div className="mr-10 font-bold text-xl hidden lg:block"><a href="#market">
+                                Market</a>
                             </div>
                             <div className="mr-10 font-bold text-xl hidden lg:block"><a href="#choose">Choose Us</a>
                             </div>
@@ -95,7 +95,9 @@ const Nav = () => {
                     <section id="hero">
                         <Hero/>
                     </section>
-                    <Market />
+                    <section id="market">
+                        <Market />
+                    </section>
                     <section id="choose">
                         <Choose/>
                     </section>
@@ -103,7 +105,7 @@ const Nav = () => {
                         <Join />
                     </section>
                     <Footer />
-                </>
+                </div>
             )}
         </>
     );

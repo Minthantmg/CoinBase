@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from '../heroSection/hero.module.css';
 const Join = () => {
     return (
-        <div className="w-full h-screen">
+        <div className="w-full h-screen bg-black text-white">
             <div className="flex flex-col justify-center items-center w-full h-full">
                 <div className="flex">
                     <div className={`hidden sm:block ${styles.floatingImage}`}>
@@ -15,7 +15,7 @@ const Join = () => {
                         <div>
                             JOIN US VIA
                         </div>
-                        <div>
+                        <div className="bg-gradient-to-r from-blue-800 to-purple-500 bg-clip-text text-transparent">
                             DISCORD
                         </div>
                     </div>
@@ -26,7 +26,7 @@ const Join = () => {
                 <div className="mt-6 sm:text-3xl text-xl text-center font-sans">
                     Invest and manage all your crypto at one place.
                 </div>
-                <div className="sm:mt-20 mt-16 bg-purple-600 px-10 py-6 rounded-full text-white font-bold text-xl cursor-pointer">
+                <div className="sm:mt-20 mt-16 bg-purple-600 px-10 py-6 rounded-full text-white font-bold text-xl cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500">
                     <button>Join via Discord</button>
                 </div>
             </div>

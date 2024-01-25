@@ -1,0 +1,11 @@
+.custom-scroll-container {
+    overflow: hidden; /* Hide overflow by default */
+}
+
+@media only screen and (max-width: 767px) {
+    .custom-scroll-container {
+        overflow-y: auto; /* Enable vertical scrolling on mobile */
+        overflow-x: hidden; /* Hide horizontal scrolling on mobile */
+        height: 100vh; /* Set the height to full viewport height on mobile */
+    }
+}
