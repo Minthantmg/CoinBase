@@ -1,27 +1,18 @@
 import React from 'react';
 import {useCoins} from "../../../hooks/useCoins";
 import bitcoin from '../../../public/crypto.png'
+import Link from "next/link";
 
 const Market = () => {
-    const {useGetBitCoin} = useCoins()
-    const {useGetEthereum} = useCoins()
-    const {useGetTether} = useCoins()
-    const {useGetBNB} = useCoins()
-    const {useGetSol} = useCoins()
-    const {useGetXRP} = useCoins()
-    const {data: btc, isLoading, isErrorBtc, isSuccess: isSuccessBtc} = useGetBitCoin()
-    const {data: eth, isSuccess: isSuccessEth, isErrorEth} = useGetEthereum()
-    const {data: te, isSuccess: isSuccessTe, isErrorTe} = useGetTether()
-    const {data: bnb, isSuccess: isSuccessBnb, isErrorBnb} = useGetBNB()
-    const {data: sol, isSuccess: isSuccessSol, isErrorSol} = useGetSol()
-    const {data: xrp, isSuccess: isSuccessXrp, isErrorXrp} = useGetXRP()
+    const {useGetCoinList} = useCoins()
+    const {data: coins, isLoading, isError, isSuccess} = useGetCoinList()
 
     return (
         <div className="bg-black text-white">
             <div className="font-bold text-3xl ml-28 sm:pt-16">
                 Market Update
             </div>
-            {isErrorBtc && isErrorEth && isErrorTe(
+            {isError && (
                 <>
                     <div>
                         Loading...
@@ -51,134 +42,37 @@ const Market = () => {
                         Market Cap
                     </div>
                 </div>
-                {isSuccessBtc && isSuccessEth && isSuccessTe && isSuccessBnb && isSuccessSol && isSuccessXrp && (
+                {isSuccess && (
                     <>
-                        <div className="flex justify-between mt-4 pb-4 text-2xl font-bold border-b-2 ml-24 mr-20">
-                            <div className="flex w-1/4">
-                                <img src={btc.image.small} alt=""/>
-                                <div className="flex justify-center items-center ml-4">
-                                    {btc.name}
-                                </div>
+                        {coins.map((coin, index) => (
+                            <div key={index} >
+                                <Link legacyBehavior={true} href="">
+                                    <a>
+                                        <div className="flex justify-between mt-4 pb-4 text-2xl font-bold border-b-2 ml-24 mr-20">
+                                            <div className="flex w-1/4">
+                                                <img src={coin.image} alt="" className="w-12 h-12"/>
+                                                <div className="flex justify-center items-center ml-4">
+                                                    {coin.name}
+                                                </div>
+                                            </div>
+                                            <div className="text-end text-2xl font-bold mt-2 w-1/4">
+                                                $ {coin.current_price.toLocaleString(undefined, {
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 2
+                                            })}
+                                            </div>
+                                            <div
+                                                className={`mt-2 w-1/4 text-end ${coin.price_change_percentage_24h > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                                                {coin.price_change_percentage_24h.toFixed(2)}%
+                                            </div>
+                                            <div className="mt-2 w-1/4 text-end mr-2">
+                                                $ {coin.market_cap.toLocaleString()}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </Link>
                             </div>
-                            <div className="text-end text-2xl font-bold mt-2 w-1/4">
-                                $ {btc.market_data.current_price.usd.toLocaleString(undefined, {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            })}
-                            </div>
-                            <div
-                                className={`mt-2 w-1/4 text-end ${btc.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                {btc.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
-                            </div>
-                            <div className="mt-2 w-1/4 text-end mr-2">
-                                $ {btc.market_data.market_cap.usd.toLocaleString()}
-                            </div>
-                        </div>
-                        <div className="flex justify-between mt-4 pb-4 text-2xl font-bold border-b-2 ml-24 mr-20">
-                            <div className="flex w-1/4">
-                                <img src={eth.image.small} alt=""/>
-                                <div className="flex justify-center items-center ml-4">
-                                    {eth.name}
-                                </div>
-                            </div>
-                            <div className="text-end text-2xl font-bold mt-2 w-1/4">
-                                $ {eth.market_data.current_price.usd.toLocaleString(undefined, {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            })}
-                            </div>
-                            <div
-                                className={`mt-2 w-1/4 text-end ${eth.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                {eth.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
-                            </div>
-                            <div className="mt-2 w-1/4 text-end mr-2">
-                                $ {eth.market_data.market_cap.usd.toLocaleString()}
-                            </div>
-                        </div>
-                        <div className="flex justify-between mt-4 pb-4 text-2xl font-bold border-b-2 ml-24 mr-20">
-                            <div className="flex w-1/4">
-                                <img src={te.image.small} alt=""/>
-                                <div className="flex justify-center items-center ml-4">
-                                    {te.name}
-                                </div>
-                            </div>
-                            <div className="text-end text-2xl font-bold mt-2 w-1/4">
-                                $ {te.market_data.current_price.usd.toLocaleString(undefined, {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            })}
-                            </div>
-                            <div
-                                className={`mt-2 w-1/4 text-end ${te.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                {te.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
-                            </div>
-                            <div className="mt-2 w-1/4 text-end mr-2">
-                                $ {te.market_data.market_cap.usd.toLocaleString()}
-                            </div>
-                        </div>
-                        <div className="flex justify-between mt-4 pb-4 text-2xl font-bold border-b-2 ml-24 mr-20">
-                            <div className="flex w-1/4">
-                                <img src={bnb.image.small} alt=""/>
-                                <div className="flex justify-center items-center ml-4">
-                                    {bnb.name}
-                                </div>
-                            </div>
-                            <div className="text-end text-2xl font-bold mt-2 w-1/4">
-                                $ {bnb.market_data.current_price.usd.toLocaleString(undefined, {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            })}
-                            </div>
-                            <div
-                                className={`mt-2 w-1/4 text-end ${bnb.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                {bnb.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
-                            </div>
-                            <div className="mt-2 w-1/4 text-end mr-2">
-                                $ {bnb.market_data.market_cap.usd.toLocaleString()}
-                            </div>
-                        </div>
-                        <div className="flex justify-between mt-4 pb-4 text-2xl font-bold border-b-2 ml-24 mr-20">
-                            <div className="flex w-1/4">
-                                <img src={sol.image.small} alt=""/>
-                                <div className="flex justify-center items-center ml-4">
-                                    {sol.name}
-                                </div>
-                            </div>
-                            <div className="text-end text-2xl font-bold mt-2 w-1/4">
-                                $ {sol.market_data.current_price.usd.toLocaleString(undefined, {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            })}
-                            </div>
-                            <div
-                                className={`mt-2 w-1/4 text-end ${sol.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                {sol.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
-                            </div>
-                            <div className="mt-2 w-1/4 text-end mr-2">
-                                $ {sol.market_data.market_cap.usd.toLocaleString()}
-                            </div>
-                        </div>
-                        <div className="flex justify-between mt-4 pb-4 text-2xl font-bold border-b-2 ml-24 mr-20">
-                            <div className="flex w-1/4">
-                                <img src={xrp.image.small} alt=""/>
-                                <div className="flex justify-center items-center ml-4">
-                                    {xrp.name}
-                                </div>
-                            </div>
-                            <div className="text-end text-2xl font-bold mt-2 w-1/4">
-                                $ {xrp.market_data.current_price.usd.toLocaleString(undefined, {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            })}
-                            </div>
-                            <div
-                                className={`mt-2 w-1/4 text-end ${xrp.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                {xrp.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
-                            </div>
-                            <div className="mt-2 w-1/4 text-end mr-2">
-                                $ {xrp.market_data.market_cap.usd.toLocaleString()}
-                            </div>
-                        </div>
+                        ))}
                     </>
                 )}
             </div>

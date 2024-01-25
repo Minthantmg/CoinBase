@@ -6,17 +6,12 @@ import styles from './hero.module.css';
 import {useCoins} from "../../../hooks/useCoins";
 
 const Hero = () => {
-    const {useGetBitCoin} = useCoins()
-    const {useGetEthereum} = useCoins()
-    const {useGetTether} = useCoins()
-    const {useGetBNB} = useCoins()
-    const {data: btc, isLoading, isError, isSuccess: isSuccessBtc} = useGetBitCoin()
-    const {data: eth, isSuccess: isSuccessEth} = useGetEthereum()
-    const {data: te, isSuccess: isSuccessTe} = useGetTether()
-    const {data: bnb, isSuccess: isSuccessBnb} = useGetBNB()
+    const {useGetCoinList} = useCoins()
+    const {data: coins, isLoading, isError, isSuccess} = useGetCoinList()
+    console.log("coins:", coins)
     return (
         <div className="bg-gradient-to-b from-indigo-900 to-black h-screen flex items-center justify-center text-white">
-            {isSuccessBtc && isSuccessEth && isSuccessTe && isSuccessBnb && (
+            {isSuccess && (
                 <>
                     <div>
                         <div className="flex flex-col justify-center items-center sm:pt-10">
@@ -44,17 +39,17 @@ const Hero = () => {
                                 className="flex flex-wrap justify-center items-center sm:mt-16 pb-32 sm:ml-20 sm:mr-20">
                                 <div className="w-1/2 md:w-1/4 flex flex-col items-center">
                                     <div>
-                                        <img src={btc.image.large} alt="" className="w-32 h-32"/>
+                                        <img src={coins[0].image} alt="" className="w-32 h-32"/>
                                     </div>
                                     <div className="flex text-center text-xl font-bold mt-4">
-                                        {btc.name}
+                                        {coins[0].name}
                                         <div
-                                            className={`ml-2 ${btc.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                            {btc.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
+                                            className={`ml-2 ${coins[0].price_change_percentage_24h > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                                            {coins[0].price_change_percentage_24h.toFixed(2)}%
                                         </div>
                                     </div>
                                     <div className="text-center text-2xl font-bold">
-                                        $ {btc.market_data.current_price.usd.toLocaleString(undefined, {
+                                        $ {coins[0].current_price.toLocaleString(undefined, {
                                         minimumFractionDigits: 2,
                                         maximumFractionDigits: 2
                                     })}
@@ -62,17 +57,17 @@ const Hero = () => {
                                 </div>
                                 <div className="w-1/2 md:w-1/4 flex flex-col items-center">
                                     <div>
-                                        <img src={eth.image.large} alt="" className="w-32 h-32"/>
+                                        <img src={coins[1].image} alt="" className="w-32 h-32"/>
                                     </div>
                                     <div className="flex text-center text-xl font-bold mt-4">
-                                        {eth.name}
+                                        {coins[1].name}
                                         <div
-                                            className={`ml-2 ${eth.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                            {eth.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
+                                            className={`ml-2 ${coins[1].price_change_percentage_24h > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                                            {coins[1].price_change_percentage_24h.toFixed(2)}%
                                         </div>
                                     </div>
                                     <div className="text-center text-2xl font-bold">
-                                        $ {eth.market_data.current_price.usd.toLocaleString(undefined, {
+                                        $ {coins[1].current_price.toLocaleString(undefined, {
                                         minimumFractionDigits: 2,
                                         maximumFractionDigits: 2
                                     })}
@@ -80,17 +75,17 @@ const Hero = () => {
                                 </div>
                                 <div className="w-1/2 md:w-1/4 flex flex-col items-center">
                                     <div>
-                                        <img src={te.image.large} alt="" className="w-32 h-32"/>
+                                        <img src={coins[2].image} alt="" className="w-32 h-32"/>
                                     </div>
                                     <div className="flex text-center text-xl font-bold mt-4">
-                                        {te.name}
+                                        {coins[2].name}
                                         <div
-                                            className={`ml-2 ${te.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                            {te.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
+                                            className={`ml-2 ${coins[2].price_change_percentage_24h > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                                            {coins[2].price_change_percentage_24h.toFixed(2)}%
                                         </div>
                                     </div>
                                     <div className="text-center text-2xl font-bold">
-                                        $ {te.market_data.current_price.usd.toLocaleString(undefined, {
+                                        $ {coins[2].current_price.toLocaleString(undefined, {
                                         minimumFractionDigits: 2,
                                         maximumFractionDigits: 2
                                     })}
@@ -98,17 +93,17 @@ const Hero = () => {
                                 </div>
                                 <div className="w-1/2 md:w-1/4 flex flex-col items-center">
                                     <div>
-                                        <img src={bnb.image.large} alt="" className="w-32 h-32"/>
+                                        <img src={coins[3].image} alt="" className="w-32 h-32"/>
                                     </div>
                                     <div className="flex text-center text-xl font-bold mt-4">
-                                        {bnb.name}
+                                        {coins[3].name}
                                         <div
-                                            className={`ml-2 ${bnb.market_data.price_change_percentage_24h_in_currency.usd > 0 ? 'text-green-500' : 'text-red-500'}`}>
-                                            {bnb.market_data.price_change_percentage_24h_in_currency.usd.toFixed(2)}%
+                                            className={`ml-2 ${coins[3].price_change_percentage_24h > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                                            {coins[3].price_change_percentage_24h.toFixed(2)}%
                                         </div>
                                     </div>
                                     <div className="text-center text-2xl font-bold">
-                                        $ {bnb.market_data.current_price.usd.toLocaleString(undefined, {
+                                        $ {coins[3].current_price.toLocaleString(undefined, {
                                         minimumFractionDigits: 2,
                                         maximumFractionDigits: 2
                                     })}
