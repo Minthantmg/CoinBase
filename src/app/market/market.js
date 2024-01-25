@@ -44,7 +44,7 @@ const Market = () => {
                 </div>
                 {isSuccess && (
                     <>
-                        {coins.map((coin, index) => (
+                        {coins.slice(0, 10).map((coin, index) => ( // slice the first 10 coins
                             <div key={index} >
                                 <Link legacyBehavior={true} href="">
                                     <a>
