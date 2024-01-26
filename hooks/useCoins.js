@@ -12,6 +12,7 @@ const useGetCoinList = () => {
     })
 }
 
+
 export const useCoins = () => {
     return {
         useGetCoinList,

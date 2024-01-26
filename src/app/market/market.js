@@ -2,10 +2,16 @@ import React from 'react';
 import {useCoins} from "../../../hooks/useCoins";
 import bitcoin from '../../../public/crypto.png'
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 const Market = () => {
     const {useGetCoinList} = useCoins()
     const {data: coins, isLoading, isError, isSuccess} = useGetCoinList()
+    const router = useRouter()
+
+    const gotoAllCoinList = () =>{
+        router.push('/CoinList')
+    }
 
     return (
         <div className="bg-black text-white">
@@ -44,7 +50,7 @@ const Market = () => {
                 </div>
                 {isSuccess && (
                     <>
-                        {coins.slice(0, 10).map((coin, index) => ( // slice the first 10 coins
+                        {coins.map((coin, index) => ( // slice the first 10 coins
                             <div key={index} >
                                 <Link legacyBehavior={true} href="">
                                     <a>
@@ -73,6 +79,9 @@ const Market = () => {
                                 </Link>
                             </div>
                         ))}
+                        <div className="flex justify-end mr-24 mt-6">
+                            <button onClick={gotoAllCoinList} className="py-4 px-6 rounded-full cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500">see more</button>
+                        </div>
                     </>
                 )}
             </div>
