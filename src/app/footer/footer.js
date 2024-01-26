@@ -30,10 +30,10 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="flex text-white text-sm sm:text-lg  mt-6 ml-8 sm:ml-0 mb-16 sm:mb-0">
-                        <div className="cursor-pointer font-mono leading-tight">
+                        <div className="cursor-pointer font-mono leading-tight hover:bg-gradient-to-r hover:from-blue-800 hover:to-purple-500 hover:bg-clip-text hover:text-transparent">
                             Privacy
                         </div>
-                        <div className="ml-6 mr-6 cursor-pointer font-mono leading-tight">
+                        <div className="ml-6 mr-6 cursor-pointer font-mono leading-tight hover:bg-gradient-to-r hover:from-blue-800 hover:to-purple-500 hover:bg-clip-text hover:text-transparent">
                             Terms of Use
                         </div>
                     </div>

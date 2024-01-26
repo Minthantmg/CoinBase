@@ -1,40 +1,16 @@
+'use client'
 import React from 'react';
 import {useCoins} from "../../../hooks/useCoins";
-import bitcoin from '../../../public/crypto.png'
 import Link from "next/link";
-import {useRouter} from "next/navigation";
 
-const Market = () => {
-    const {useGetCoinList} = useCoins()
-    const {data: coins, isLoading, isError, isSuccess} = useGetCoinList()
-    const router = useRouter()
-
-    const gotoAllCoinList = () =>{
-        router.push('/coin_list')
-    }
-
+const Page = () => {
+    const{useGetAllCoins} = useCoins()
+    const {data:list,isLoading,isSuccess} = useGetAllCoins()
     return (
-        <div className="bg-black text-white">
-            <div className="font-bold text-3xl ml-28 sm:pt-16">
-                Market Update
-            </div>
-            {isError && (
-                <>
-                    <div>
-                        Loading...
-                    </div>
-                </>
-            )}
-            {isLoading && (
-                <>
-                    <div>
-                        Loading...
-                    </div>
-                </>
-            )}
-            <div className="">
+        <div className="bg-gradient-to-b from-indigo-900 to-black h-full text-white">
+            <div className="pt-6 pb-4">
                 <div
-                    className="mt-16 flex justify-between p-4 rounded-t-lg bg-gradient-to-r from-blue-700 to-purple-900 ml-24 text-white mr-20">
+                    className="flex justify-between p-4 rounded-t-lg bg-gradient-to-r from-blue-700 to-purple-900 ml-24 text-white mr-20">
                     <div className="flex items-start text-2xl font-bold w-1/4">
                         Coin
                     </div>
@@ -50,7 +26,7 @@ const Market = () => {
                 </div>
                 {isSuccess && (
                     <>
-                        {coins.map((coin, index) => ( // slice the first 10 coins
+                        {list.map((coin, index) => (
                             <div key={index} >
                                 <Link legacyBehavior={true} href={`/detail/${coin.id}`}>
                                     <a>
@@ -79,9 +55,6 @@ const Market = () => {
                                 </Link>
                             </div>
                         ))}
-                        <div className="flex justify-center items-center mt-6 font-bold text-lg">
-                            <button onClick={gotoAllCoinList} className="py-4 px-6 rounded-full cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500">Explore more</button>
-                        </div>
                     </>
                 )}
             </div>
@@ -89,4 +62,4 @@ const Market = () => {
     );
 };
 
-export default Market;
+export default Page;
