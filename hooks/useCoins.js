@@ -1,16 +1,17 @@
-import {useQuery} from "@tanstack/react-query";
+import {keepPreviousData, useQuery} from "@tanstack/react-query";
 import {
     getAllCoin,
     getCoinDetailById,
     getCoinsList,
 } from "../apis/coins";
 
-const useGetCoinList = () => {
+const useGetCoinList = (page) => {
     return useQuery({
-        queryKey: ['get', 'ticker'],
-        queryFn: () => getCoinsList(),
+        queryKey: ['get', 'ticker',page],
+        queryFn: () => getCoinsList(page),
         staleTime: 60000,
         cacheTime: 60000,
+        placeholderData: keepPreviousData,
     })
 }
 

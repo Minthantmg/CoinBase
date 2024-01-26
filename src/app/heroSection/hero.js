@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, {useState} from 'react';
 import Image from "next/image";
 import bitcoin from '../../../public/crypto.svg'
 import ethereum from '../../../public/ethereum.svg'
@@ -6,8 +7,9 @@ import styles from './hero.module.css';
 import {useCoins} from "../../../hooks/useCoins";
 
 const Hero = () => {
+    const [currentPage, setCurrentPage] = useState(1);
     const {useGetCoinList} = useCoins()
-    const {data: coins, isLoading, isError, isSuccess} = useGetCoinList()
+    const {data: coins, isLoading, isError, isSuccess} = useGetCoinList(currentPage)
     return (
         <div className="bg-gradient-to-b from-indigo-900 to-black h-full flex items-center justify-center text-white">
             {isSuccess && (

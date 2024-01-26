@@ -1,12 +1,15 @@
-import React from 'react';
+'use client'
+import React, {useState} from 'react';
 import {useCoins} from "../../../hooks/useCoins";
 import bitcoin from '../../../public/crypto.png'
 import Link from "next/link";
 import {useRouter} from "next/navigation";
+import Pagination from "@/app/pagination";
 
 const Market = () => {
+    const [currentPage, setCurrentPage] = useState(1);
     const {useGetCoinList} = useCoins()
-    const {data: coins, isLoading, isError, isSuccess} = useGetCoinList()
+    const {data: coins, isLoading, isError, isSuccess} = useGetCoinList(currentPage)
     const router = useRouter()
 
     const gotoAllCoinList = () =>{
@@ -79,9 +82,8 @@ const Market = () => {
                                 </Link>
                             </div>
                         ))}
-                        <div className="flex justify-center items-center mt-6">
-                            <button onClick={gotoAllCoinList} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg font-bold text-lg py-4 px-6 rounded-full cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 text-white">Explore more</button>
-                        </div>
+                        <Pagination currentPage={currentPage}
+                                    onPageChange={(page) => setCurrentPage(page)}/>
                     </>
                 )}
             </div>
