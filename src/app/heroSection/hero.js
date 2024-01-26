@@ -9,7 +9,7 @@ const Hero = () => {
     const {useGetCoinList} = useCoins()
     const {data: coins, isLoading, isError, isSuccess} = useGetCoinList()
     return (
-        <div className="bg-gradient-to-b from-indigo-900 to-black h-screen flex items-center justify-center text-white">
+        <div className="bg-gradient-to-b from-indigo-900 to-black h-full flex items-center justify-center text-white">
             {isSuccess && (
                 <>
                     <div>

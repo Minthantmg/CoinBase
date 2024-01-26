@@ -79,8 +79,8 @@ const Market = () => {
                                 </Link>
                             </div>
                         ))}
-                        <div className="flex justify-center items-center mt-6 font-bold text-lg">
-                            <button onClick={gotoAllCoinList} className="py-4 px-6 rounded-full cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500">Explore more</button>
+                        <div className="flex justify-center items-center mt-6">
+                            <button onClick={gotoAllCoinList} className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg font-bold text-lg py-4 px-6 rounded-full cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 text-white">Explore more</button>
                         </div>
                     </>
                 )}
