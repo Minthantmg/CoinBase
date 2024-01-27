@@ -12,29 +12,29 @@ const Hero = () => {
     const {data: coins, isLoading, isError, isSuccess} = useGetCoinList(currentPage)
     return (
         <div className="bg-gradient-to-b from-indigo-900 to-black h-full flex items-center justify-center text-white">
-            {isSuccess && (
-                <>
-                    <div>
-                        <div className="flex flex-col justify-center items-center sm:pt-10">
-                            <div className="flex">
-                                <div className={`mt-20 hidden xl:block ${styles.floatingImage}`}>
-                                    <Image src={bitcoin} alt="" className="w-36 h-36"/>
-                                </div>
-                                <div
-                                    className="sm:text-[120px] text-6xl mt-12 space-x-6 font-mono font-bold leading-tight tracking-tight text-center">
-                                    TRACK AND TRADE
-                                </div>
-                                <div className={`mt-20 hidden xl:block ${styles.floatingImage}`}>
-                                    <Image src={ethereum} alt="" className="w-36 h-36"/>
-                                </div>
+            <>
+                <div>
+                    <div className="flex flex-col justify-center items-center sm:pt-10">
+                        <div className="flex">
+                            <div className={`mt-20 hidden xl:block ${styles.floatingImage}`}>
+                                <Image src={bitcoin} alt="" className="w-36 h-36"/>
                             </div>
-                            <div>
-                                <div
-                                    className="sm:text-[120px] sm:ml-8 sm:mr-8 text-6xl space-x-6 font-mono font-bold leading-tight tracking-tight text-center bg-gradient-to-r from-blue-800 to-purple-500 bg-clip-text text-transparent">CRYPTO
-                                    CURRENCIES
-                                </div>
+                            <div
+                                className="sm:text-[120px] text-6xl mt-12 space-x-6 font-mono font-bold leading-tight tracking-tight text-center">
+                                TRACK AND TRADE
+                            </div>
+                            <div className={`mt-20 hidden xl:block ${styles.floatingImage}`}>
+                                <Image src={ethereum} alt="" className="w-36 h-36"/>
                             </div>
                         </div>
+                        <div>
+                            <div
+                                className="sm:text-[120px] sm:ml-8 sm:mr-8 text-6xl space-x-6 font-mono font-bold leading-tight tracking-tight text-center bg-gradient-to-r from-blue-800 to-purple-500 bg-clip-text text-transparent">CRYPTO
+                                CURRENCIES
+                            </div>
+                        </div>
+                    </div>
+                    {isSuccess && (
                         <div>
                             <div
                                 className="flex flex-wrap justify-center items-center sm:mt-16 pb-32 sm:ml-20 sm:mr-20">
@@ -112,9 +112,9 @@ const Hero = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </>
-            )}
+                    )}
+                </div>
+            </>
         </div>
     );
 };
