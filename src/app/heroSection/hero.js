@@ -6,6 +6,8 @@ import ethereum from '../../../public/ethereum.svg'
 import arrow from '../../../public/arrow_down.svg'
 import styles from './hero.module.css';
 import {useCoins} from "../../../hooks/useCoins";
+import Loading from "@/app/loading";
+import Error from "@/app/error";
 
 const Hero = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -37,11 +39,18 @@ const Hero = () => {
                     </div>
                     <div className="flex justify-center items-center mt-24 sm:hidden">
                         <a href="#market">
-                        <button
-                            className="btn btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-purple-600 text-white font-bold text-lg cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 rounded-full">See
-                            prices<span><Image src={arrow} alt=""/></span></button>
+                            <button
+                                className="btn btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-purple-600 text-white font-bold text-lg cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 rounded-full">See
+                                prices<span><Image src={arrow} alt=""/></span></button>
                         </a>
                     </div>
+                    {isLoading && <Loading/>}
+                    {isError && (
+                        <div className="sm:ml-10 sm:mr-10 sm:mt-0 mt-6 ml-4 mr-4">
+                            <Error/>
+                        </div>
+                    )
+                    }
                     {isSuccess && (
                         <div className="hidden sm:block">
                             <div

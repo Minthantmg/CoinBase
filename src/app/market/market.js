@@ -1,10 +1,11 @@
 'use client'
 import React, {useState} from 'react';
 import {useCoins} from "../../../hooks/useCoins";
-import bitcoin from '../../../public/crypto.png'
 import Link from "next/link";
 import {useRouter} from "next/navigation";
 import Pagination from "@/app/pagination";
+import Loading from "@/app/loading";
+import Error from "@/app/error";
 
 const Market = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -12,29 +13,11 @@ const Market = () => {
     const {data: coins, isLoading, isError, isSuccess} = useGetCoinList(currentPage)
     const router = useRouter()
 
-    const gotoAllCoinList = () =>{
-        router.push('/coin_list')
-    }
-
     return (
         <div className="bg-black text-white">
             <div className="font-bold text-3xl sm:ml-28 sm:pt-16 ml-20 pt-16">
                 Market Update
             </div>
-            {isError && (
-                <>
-                    <div>
-                        Loading...
-                    </div>
-                </>
-            )}
-            {isLoading && (
-                <>
-                    <div>
-                        Loading...
-                    </div>
-                </>
-            )}
             <div className="">
                 <div
                     className="mt-16 flex justify-between sm:p-4 p-2 rounded-t-lg bg-gradient-to-r from-blue-700 to-purple-900 sm:ml-24 text-white sm:mr-20 ml-4 mr-4">
@@ -51,6 +34,12 @@ const Market = () => {
                         Market Cap
                     </div>
                 </div>
+                {isError && (
+                    <div className="sm:ml-24 sm:mr-24 sm:mt-6 ml-4 mr-4 mt-6 sm:mt-0">
+                        <Error />
+                    </div>
+                )}
+                {isLoading && <Loading />}
                 {isSuccess && (
                     <>
                         {coins.map((coin, index) => ( // slice the first 10 coins
