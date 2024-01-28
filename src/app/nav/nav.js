@@ -42,7 +42,7 @@ const Nav = () => {
                         <div className="mb-4 flex justify-end mr-2 mt-1">
                             <Image src={close} alt="" onClick={closeMobileMenu}/>
                         </div>
-                        <div className="flex flex-col items-center justify-center mt-60">
+                        <div className="flex flex-col items-center justify-center pt-40 pb-40">
                             <a href="#hero" className="mb-4 font-bold text-xl" onClick={closeMobileMenu}>
                                 Home
                             </a>

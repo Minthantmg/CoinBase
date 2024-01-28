@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import Image from "next/image";
 import bitcoin from '../../../public/crypto.svg'
 import ethereum from '../../../public/ethereum.svg'
+import arrow from '../../../public/arrow_down.svg'
 import styles from './hero.module.css';
 import {useCoins} from "../../../hooks/useCoins";
 
@@ -34,8 +35,15 @@ const Hero = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="flex justify-center items-center mt-24 sm:hidden">
+                        <a href="#market">
+                        <button
+                            className="btn btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-purple-600 text-white font-bold text-lg cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 rounded-full">See
+                            prices<span><Image src={arrow} alt=""/></span></button>
+                        </a>
+                    </div>
                     {isSuccess && (
-                        <div>
+                        <div className="hidden sm:block">
                             <div
                                 className="flex flex-wrap justify-center items-center sm:mt-16 pb-32 sm:ml-20 sm:mr-20">
                                 <div className="w-1/2 md:w-1/4 flex flex-col items-center">
