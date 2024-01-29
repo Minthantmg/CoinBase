@@ -47,23 +47,23 @@ const Market = () => {
                                 <Link legacyBehavior={true} href={`/detail/${coin.id}`}>
                                     <a>
                                         <div className="flex justify-between sm:mt-4 sm:pb-4 sm:text-2xl font-bold border-b-2 sm:ml-24 sm:mr-20 ml-4 mr-4 mt-4 mb-8">
-                                            <div className="flex sm:w-1/4 pb-6 sm:pb-0 w-1/3 md:mt-2 sm:mt-0 mt-0">
-                                                <img src={coin.image} alt="" className="w-14 h-14 hidden sm:flex sm:mt-2 mt-0"/>
+                                            <div className="flex sm:w-1/4 pb-6 sm:pb-0 w-1/3 md:mt-0 sm:mt-0 mt-0">
+                                                <img src={coin.image} alt="" className="w-14 h-14 hidden sm:flex sm:mt-0 mt-0"/>
                                                 <div className="flex justify-center items-center ml-4">
                                                     {coin.name}
                                                 </div>
                                             </div>
-                                            <div className="text-end sm:text-2xl md:mt-6 sm:mt-0 font-bold mt-2 sm:w-1/4 pb-6 sm:pb-6 w-1/3">
+                                            <div className="text-end sm:text-2xl md:mt-2 sm:mt-0 font-bold mt-2 sm:w-1/4 pb-6 sm:pb-6 w-1/3">
                                                 $ {coin.current_price.toLocaleString(undefined, {
                                                 minimumFractionDigits: 2,
                                                 maximumFractionDigits: 2
                                             })}
                                             </div>
                                             <div
-                                                className={`mt-2 sm:w-1/4 text-end pb-6 sm:pb-0 w-1/3 md:mt-6 sm:mt-0 ${coin.price_change_percentage_24h > 0 ? 'text-green-500' : 'text-red-500'}`}>
+                                                className={`mt-2 sm:w-1/4 text-end pb-6 sm:pb-0 w-1/3 md:mt-2 sm:mt-0 ${coin.price_change_percentage_24h > 0 ? 'text-green-500' : 'text-red-500'}`}>
                                                 {coin.price_change_percentage_24h.toFixed(2)}%
                                             </div>
-                                            <div className="hidden sm:block mt-2 sm:w-1/4 text-end mr-2 pb-6 sm:pb-0 md:mt-6 sm:mt-0">
+                                            <div className="hidden sm:block mt-2 sm:w-1/4 text-end mr-2 pb-6 sm:pb-0 md:mt-2 sm:mt-0">
                                                 $ {coin.market_cap.toLocaleString()}
                                             </div>
                                         </div>
