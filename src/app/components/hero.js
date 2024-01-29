@@ -4,10 +4,10 @@ import Image from "next/image";
 import bitcoin from '../../../public/crypto.svg'
 import ethereum from '../../../public/ethereum.svg'
 import arrow from '../../../public/arrow_down.svg'
-import styles from './hero.module.css';
+import styles from '../heroSection/hero.module.css';
 import {useCoins} from "../../../hooks/useCoins";
-import Loading from "@/app/loading";
-import Error from "@/app/error";
+import Loading from "@/app/components/loading";
+import Error from "@/app/components/error";
 
 const Hero = () => {
     const [currentPage, setCurrentPage] = useState(1);

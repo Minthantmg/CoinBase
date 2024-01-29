@@ -6,12 +6,12 @@ import linkedin from '../../../public/linkedin.svg';
 import hamburger from '../../../public/hamburger.svg';
 import close from '../../../public/close.svg';
 import {useRouter} from 'next/navigation';
-import styles from './nav.module.css';
-import Hero from "@/app/heroSection/hero";
-import Market from "@/app/market/market";
-import Choose from "@/app/choose/choose";
-import Join from "@/app/join/join";
-import Footer from "@/app/footer/footer";
+import styles from '../nav/nav.module.css';
+import Hero from "@/app/components/hero";
+import Market from "@/app/components/market";
+import Choose from "@/app/components/choose";
+import Join from "@/app/components/join";
+import Footer from "@/app/components/footer";
 
 const Nav = () => {
     const router = useRouter();

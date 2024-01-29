@@ -3,9 +3,9 @@ import React, {useState} from 'react';
 import {useCoins} from "../../../hooks/useCoins";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
-import Pagination from "@/app/pagination";
-import Loading from "@/app/loading";
-import Error from "@/app/error";
+import Pagination from "@/app/components/pagination";
+import Loading from "@/app/components/loading";
+import Error from "@/app/components/error";
 
 const Market = () => {
     const [currentPage, setCurrentPage] = useState(1);

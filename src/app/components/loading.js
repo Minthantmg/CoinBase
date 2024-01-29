@@ -1,5 +1,5 @@
 import React from 'react';
-import loading from '../../public/Animation - 1706461004739.gif'
+import loading from '../../../public/Animation - 1706461004739.gif'
 import Image from "next/image";
 
 const Loading = () => {

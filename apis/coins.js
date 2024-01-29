@@ -17,13 +17,3 @@ export const getCoinDetailById = async (id) => {
         throw e;
     }
 };
-
-export const getAllCoin = async () => {
-    try {
-        const res = await axiosInstance.get(`coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`);
-        console.log(res.data)
-        return res.data;
-    } catch (e) {
-        throw e;
-    }
-};

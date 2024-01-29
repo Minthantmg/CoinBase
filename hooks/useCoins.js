@@ -22,20 +22,9 @@ const useGetCoinById = (id) => {
     });
 };
 
-const useGetAllCoins = () => {
-    return useQuery({
-        queryKey: ['get', 'all_coin'],
-        queryFn: () => getAllCoin(),
-        staleTime: 60000,
-        cacheTime: 60000,
-    });
-};
-
-
 export const useCoins = () => {
     return {
         useGetCoinList,
         useGetCoinById,
-        useGetAllCoins,
     }
 }

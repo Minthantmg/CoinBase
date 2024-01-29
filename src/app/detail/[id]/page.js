@@ -2,6 +2,7 @@
 import React from 'react';
 import {useParams, useRouter} from "next/navigation";
 import {useCoins} from "../../../../hooks/useCoins";
+import Loading from "@/app/components/loading";
 
 const Page = () => {
     const {id} = useParams();
@@ -15,6 +16,11 @@ const Page = () => {
 
     return (
         <div className="bg-gradient-to-b from-indigo-900 to-black h-full sm:h-screen flex items-center justify-center text-white">
+            {isLoading && (
+                <div className="bg-gradient-to-b from-indigo-900 to-black w-full h-screen flex justify-center items-center">
+                    <Loading />
+                </div>
+            )}
             {isSuccess && (
                 <div className="w-full h-full sm:flex flex-col">
                    <div className="sm:flex sm:justify-center sm:items-center sm:ml-36 sm:mt-44 sm:mr-32">
