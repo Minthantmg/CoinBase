@@ -60,7 +60,7 @@ const Nav = () => {
                 </div>
             ) : (
                 <div className="bg-indigo-900 text-white">
-                    <div className="flex justify-around sm:justify-between items-center pt-8 pb-8">
+                    <div className="flex justify-around sm:justify-between sm:items-center pt-8 pb-8">
                         <div>
                             <div className="font-mono text-3xl font-bold sm:ml-28">COINBASE</div>
                         </div>
