@@ -27,7 +27,7 @@ const Join = () => {
                     Invest and manage all your crypto at one place.
                 </div>
                 <div className="sm:mt-20 mt-16">
-                    <button className="btn btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-purple-600 text-white font-bold text-xl cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 rounded-full">Join via Discord</button>
+                    <button className="btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-purple-600 text-white font-bold text-xl cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 rounded-full">Join via Discord</button>
                 </div>
             </div>
         </div>

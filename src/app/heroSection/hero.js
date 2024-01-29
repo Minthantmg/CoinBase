@@ -40,8 +40,8 @@ const Hero = () => {
                     <div className="flex justify-center items-center mt-24 sm:hidden">
                         <a href="#market">
                             <button
-                                className="btn btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-purple-600 text-white font-bold text-lg cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 rounded-full">See
-                                prices<span><Image src={arrow} alt=""/></span></button>
+                                className="flex justify-center items-center btn-lg sm:btn-sm md:btn-md lg:btn-lg bg-purple-600 text-white font-bold text-lg cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 rounded-full">See
+                                prices<span><Image src={arrow} alt="" className="ml-3"/></span></button>
                         </a>
                     </div>
                     {isLoading && <Loading/>}

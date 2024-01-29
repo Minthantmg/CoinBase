@@ -14,7 +14,7 @@ const Choose = () => {
                     WHY <span className="ml-3 bg-gradient-to-r from-blue-800 to-purple-500 bg-clip-text text-transparent">CHOOSE US</span>
             </div>
             <div className="sm:flex sm:justify-center sm:items-center pb-10">
-                <div className="sm:mr-28 mt-6">
+                <div className="sm:mr-28 mt-6 md:ml-10">
                     <div className="ml-3 sm:ml-0 bg-gray-900 p-6 w-[350px] rounded-xl">
                         <div>
                             <div className="flex">
@@ -59,7 +59,7 @@ const Choose = () => {
                     <img src="https://coindom-crypto-search.vercel.app/static/media/choose-main.39852b7511b28d44406f.png"
                          alt="" width={350} height={350}/>
                 </div>
-                <div className="sm:ml-28 mt-6">
+                <div className="sm:ml-28 mt-6 md:mr-10">
                     <div className="ml-3 sm:ml-0 bg-gray-900 p-6 w-[350px] rounded-xl">
                         <div>
                             <div className="flex">

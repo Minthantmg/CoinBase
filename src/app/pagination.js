@@ -13,11 +13,11 @@ const Pagination = ({
     return (
         <div className="flex justify-center items-center sm:mt-10">
             <div className="join">
-                <button className="join-item btn bg-blue-800" onClick={handlePrevClick}
+                <button className="join-item btn-md bg-blue-800" onClick={handlePrevClick}
                         disabled={currentPage === 1}>«
                 </button>
-                <button className="join-item btn text-white bg-purple-600 font-bold cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 rounded-full">Page {currentPage}</button>
-                <button className="join-item btn bg-purple-500" onClick={handleNextClick}
+                <button className="join-item btn-md text-white bg-purple-600 font-bold cursor-pointer bg-gradient-to-r from-blue-800 to-purple-500 rounded-full">Page {currentPage}</button>
+                <button className="join-item btn-md bg-purple-500" onClick={handleNextClick}
                         disabled={currentPage === pageCount}>»
                 </button>
             </div>
