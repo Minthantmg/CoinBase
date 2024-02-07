@@ -15,7 +15,7 @@ const Choose = () => {
             </div>
             <div className="sm:flex sm:justify-center sm:items-center pb-10">
                 <div className="sm:mr-28 mt-6 md:ml-10">
-                    <div className="ml-3 sm:ml-0 bg-gray-900 p-6 w-[350px] rounded-xl">
+                    <div className="ml-3 mr-3 sm:mr-0 sm:ml-0 bg-gray-900 p-6 sm:w-[350px] rounded-xl">
                         <div>
                             <div className="flex">
                                 <div className="p-4 bg-red-500 rounded-xl bg-gradient-to-b from-purple-600 to-blue-500">
@@ -28,7 +28,7 @@ const Choose = () => {
                             Use Trust Wallet, Metamask or to connect to the app.
                         </div>
                     </div>
-                    <div className="ml-3 sm:ml-0 bg-gray-900 p-6 w-[350px] rounded-xl mt-6">
+                    <div className="ml-3 mr-3 sm:mr-0 sm:ml-0 bg-gray-900 p-6 sm:w-[350px] rounded-xl mt-6">
                         <div>
                             <div className="flex">
                                 <div className="p-4 bg-red-500 rounded-xl bg-gradient-to-b from-purple-600 to-blue-500">
@@ -41,7 +41,7 @@ const Choose = () => {
                             Upload your crypto and set a title, description and price.
                         </div>
                     </div>
-                    <div className="ml-3 sm:ml-0 bg-gray-900 p-6 w-[350px] rounded-xl mt-6">
+                    <div className="ml-3 mr-3 sm:mr-0 sm:ml-0 bg-gray-900 p-6 sm:w-[350px] rounded-xl mt-6">
                         <div>
                             <div className="flex">
                                 <div className="p-4 bg-red-500 rounded-xl bg-gradient-to-b from-purple-600 to-blue-500">
@@ -60,7 +60,7 @@ const Choose = () => {
                          alt="" width={350} height={350}/>
                 </div>
                 <div className="sm:ml-28 mt-6 md:mr-10">
-                    <div className="ml-3 sm:ml-0 bg-gray-900 p-6 w-[350px] rounded-xl">
+                    <div className="ml-3 mr-3 sm:mr-0 sm:ml-0 bg-gray-900 p-6 sm:w-[350px] rounded-xl mt-6">
                         <div>
                             <div className="flex">
                                 <div className="p-4 bg-red-500 rounded-xl bg-gradient-to-b from-purple-600 to-blue-500">
@@ -73,7 +73,7 @@ const Choose = () => {
                             Invest all your crypto at one place on one platform.
                         </div>
                     </div>
-                    <div className="ml-3 sm:ml-0 bg-gray-900 p-6 w-[350px] rounded-xl mt-6">
+                    <div className="ml-3 mr-3 sm:mr-0 sm:ml-0 bg-gray-900 p-6 sm:w-[350px] rounded-xl mt-6">
                         <div>
                             <div className="flex">
                                 <div className="p-4 bg-red-500 rounded-xl bg-gradient-to-b from-purple-600 to-blue-500">
@@ -87,7 +87,7 @@ const Choose = () => {
                             Discover, collect the right crypto collections to buy.
                         </div>
                     </div>
-                    <div className="ml-3 sm:ml-0 bg-gray-900 p-6 w-[350px] rounded-xl mt-6">
+                    <div className="ml-3 mr-3 sm:mr-0 sm:ml-0 bg-gray-900 p-6 sm:w-[350px] rounded-xl mt-6">
                         <div>
                             <div className="flex">
                                 <div className="p-4 bg-red-500 rounded-xl bg-gradient-to-b from-purple-600 to-blue-500">

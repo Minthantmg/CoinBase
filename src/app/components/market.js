@@ -15,7 +15,7 @@ const Market = () => {
 
     return (
         <div className="bg-black text-white">
-            <div className="font-bold text-3xl sm:ml-28 sm:pt-16 ml-20 pt-16">
+            <div className="font-bold text-3xl flex justify-center items-center sm:justify-start sm:ml-24 sm:pt-16 pt-16">
                 Market Update
             </div>
             <div className="">
