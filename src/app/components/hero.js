@@ -14,10 +14,10 @@ const Hero = () => {
     const {useGetCoinList} = useCoins()
     const {data: coins, isLoading, isError, isSuccess} = useGetCoinList(currentPage)
     return (
-        <div className="bg-gradient-to-b from-indigo-900 to-black h-full flex items-center justify-center text-white">
+        <div className="bg-gradient-to-b from-indigo-900 to-black h-full flex-center text-white">
             <>
                 <div>
-                    <div className="flex flex-col justify-center items-center sm:pt-10">
+                    <div className="flex-column sm:pt-10">
                         <div className="flex">
                             <div className={`mt-20 hidden xl:block ${styles.floatingImage}`}>
                                 <Image src={bitcoin} alt="" className="w-36 h-36"/>
