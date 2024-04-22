@@ -38,7 +38,7 @@ const Nav = () => {
         <>
             {menuOpen ? (
                 <div className={`popup-menu ${styles.slideIn}`}>
-                    <div className="bg-white p-4 flex-col items-center justify-center">
+                    <div className="bg-white p-4 h-screen flex-col items-center justify-center">
                         <div className="mb-4 flex justify-end mr-2 mt-1">
                             <Image src={close} alt="" onClick={closeMobileMenu}/>
                         </div>
