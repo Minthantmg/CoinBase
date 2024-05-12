@@ -14,7 +14,7 @@ const metadata = {
 export default function RootLayout({children}) {
     return (
         <QueryClientProvider client={queryClient}>
-            <html lang="en">
+            <html lang="en" className="!scroll-smooth">
             <head>
                 <title>CoinBase</title>
                 <link rel="icon" href="/public/bitcoin-32x32.svg" />
